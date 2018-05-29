@@ -5,6 +5,19 @@ module Api::V1
       render json: @ideas
     end
 
+    def show
+      @idea = Idea.find(params[:id])
+      # render json: @idea
+      # render json: { key: 'value' }
+      render json: {
+        "id": 2,
+        "title": "A new cake recipe",
+        "body": "Made of chocolate",
+        "created_at": "2018-05-24T22:41:38.190Z",
+        "updated_at": "2018-05-24T22:41:38.190Z"
+      }
+    end
+
     def create
       @idea = Idea.create(idea_params)
       render json: @idea
