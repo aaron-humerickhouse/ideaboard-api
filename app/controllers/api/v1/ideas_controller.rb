@@ -7,15 +7,16 @@ module Api::V1
 
     def show
       @idea = Idea.find(params[:id])
-      # render json: @idea
-      # render json: { key: 'value' }
-      render json: {
-        "id": 2,
-        "title": "A new cake recipe",
-        "body": "Made of chocolate",
-        "created_at": "2018-05-24T22:41:38.190Z",
-        "updated_at": "2018-05-24T22:41:38.190Z"
-      }
+      render json: @idea
+      # render json: {id: 'test'}
+      # render json: {
+      #   "id": 2,
+      #   "title": "A new cake recipe",
+      #   "body": "Made of chocolate",
+      #   "created_at": "2018-05-24T22:41:38.190Z",
+      #   "updated_at": "2018-05-24T22:41:38.190Z",
+      #   "extra_key": 'Test'
+      # }
     end
 
     def create
